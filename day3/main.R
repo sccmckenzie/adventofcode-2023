@@ -65,4 +65,4 @@ mat_df2 |>
   mutate(adj_cnt = n()) |> 
   filter(adj_cnt == 2) |> 
   summarize(gear_ratio = prod(num_full)) |> 
-  summarize(total_gear_ratio = sum(gear_ratio))
+  summarize(gear_ratio_sum = sum(gear_ratio))
