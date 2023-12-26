@@ -60,104 +60,36 @@ for key in map_coord:
 
 almanac = almanac.with_columns(
     (pl.col("source_lower") + pl.col("length") - 1).alias("source_upper"))
+out = pl.DataFrame(seeds)
 
 
+for num, mapping in enumerate(list(map_coord.keys())):
+    source, dest = mapping.split('-to-')
+    existing_fields = out.columns
+    out = out.lazy()
+    out = (
+        out
+        .join(
+            almanac.filter(pl.col("mapping") == pl.Series(
+            [mapping], dtype=map_enum)),
+            how="cross"
+        )
+        .with_columns(
+            ((pl.col(source) >= pl.col("source_lower")) &
+            (pl.col(source) <= pl.col("source_upper")))
+            .alias("is_captured")
+        )
+        .with_columns(
+            pl.when(pl.col("is_captured")).then(pl.col("dest_lower") + pl.col(source) - pl.col("source_lower")).alias(dest)
+        )
+        .group_by(existing_fields + ["mapping"])
+        .agg(pl.col(dest).max().alias(dest))
+        .with_columns(pl.when(pl.col(dest).is_null()).then(pl.col(source)).otherwise(pl.col(dest)).alias(dest))
+        .select(existing_fields + [dest])
+    ).collect()
 
-(
-    pl.LazyFrame(seeds)
-    .join(
-        almanac.filter(pl.col("mapping") == pl.Series(
-            ["seed-to-soil"], dtype=map_enum)),
-        how="cross"
-    )
-    .with_columns(
-        ((pl.col("seed") >= pl.col("source_lower")) &
-         (pl.col("seed") <= pl.col("source_upper")))
-        .alias("is_captured")
-    )
-    .with_columns(
-        pl.when(pl.col("is_captured")).then(pl.col("dest_lower") + pl.col("seed") - pl.col("source_lower")).alias("dest")
-    )
-    .group_by(["seed", "mapping"])
-    .agg(pl.col("dest").max().alias("soil"))
-    .with_columns(soil=pl.when(pl.col("soil").is_null()).then(pl.col("seed")).otherwise(pl.col("soil")))
-    .collect()
+min_location = out.group_by(True).agg(
+    pl.min("location")
 )
 
-# full_mapping = pl.DataFrame(seeds).join(
-#     almanac.filter(pl.col("mapping") == "seed-to-soil").rename({"coord_source": "seed"}),
-#     on="seed",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("seed")).otherwise(pl.col("coord_dest")).alias("soil")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "soil-to-fertilizer").rename({"coord_source": "soil"}),
-#     on="soil",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("soil")).otherwise(pl.col("coord_dest")).alias("fertilizer")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "fertilizer-to-water").rename({"coord_source": "fertilizer"}),
-#     on="fertilizer",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.col("fertilizer"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("fertilizer")).otherwise(pl.col("coord_dest")).alias("water")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "water-to-light").rename({"coord_source": "water"}),
-#     on="water",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.col("fertilizer"),
-#     pl.col("water"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("water")).otherwise(pl.col("coord_dest")).alias("light")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "light-to-temperature").rename({"coord_source": "light"}),
-#     on="light",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.col("fertilizer"),
-#     pl.col("water"),
-#     pl.col("light"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("light")).otherwise(pl.col("coord_dest")).alias("temperature")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "temperature-to-humidity").rename({"coord_source": "temperature"}),
-#     on="temperature",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.col("fertilizer"),
-#     pl.col("water"),
-#     pl.col("light"),
-#     pl.col("temperature"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("temperature")).otherwise(pl.col("coord_dest")).alias("humidity")
-# ).join(
-#     almanac.filter(pl.col("mapping") == "humidity-to-location").rename({"coord_source": "humidity"}),
-#     on="humidity",
-#     how="left"
-# ).select(
-#     pl.col("seed"),
-#     pl.col("soil"),
-#     pl.col("fertilizer"),
-#     pl.col("water"),
-#     pl.col("light"),
-#     pl.col("temperature"),
-#     pl.col("humidity"),
-#     pl.when(pl.col("coord_dest").is_null()).then(pl.col("humidity")).otherwise(pl.col("coord_dest")).alias("location")
-# )
-
-# min_location = full_mapping.group_by(True).agg(
-#     pl.min("location")
-# )
-
-# print(min_location)
+print(min_location)
