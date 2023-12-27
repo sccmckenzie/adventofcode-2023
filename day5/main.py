@@ -2,7 +2,7 @@ import re
 import polars as pl
 
 # predefine variables, mostly for first iteration
-input_path = 'input_demo.txt'
+input_path = 'input.txt'
 seeds = pl.Series(dtype=pl.UInt64)
 map_coord = {}
 map_current = None
@@ -39,6 +39,7 @@ almanac = pl.LazyFrame(
     }
 )
 
+# populate almanac
 for key in map_coord:
     start = map_coord[key]["start"]
     end = map_coord[key]["end"]
@@ -58,11 +59,14 @@ for key in map_coord:
         ]
     )
 
+# define source upper
 almanac = almanac.with_columns(
     (pl.col("source_lower") + pl.col("length") - 1).alias("source_upper"))
+
+# initiate output object
 out = pl.DataFrame(seeds)
 
-
+# traverse almanac for each seed
 for num, mapping in enumerate(list(map_coord.keys())):
     source, dest = mapping.split('-to-')
     existing_fields = out.columns
@@ -88,6 +92,7 @@ for num, mapping in enumerate(list(map_coord.keys())):
         .select(existing_fields + [dest])
     ).collect()
 
+# find min location
 min_location = out.group_by(True).agg(
     pl.min("location")
 )
