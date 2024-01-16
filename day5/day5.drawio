@@ -1,0 +1,150 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T03:43:51.974Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15" etag="Cbdg4XSJoAeOxxMfb_mp" version="22.1.18" type="device">
+  <diagram name="Page-1" id="MLN2rzIXKxrf5tGAyEtu">
+    <mxGraphModel dx="708" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="P5py2p3auUi1wWhIR2dC-1" value="1310704850" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="180" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-2" value="1310704851" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="230" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-3" value="1310704852" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="280" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-4" value="1310704853" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="330" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-5" value="1310704854" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="380" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-6" value="1310704855" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="430" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-7" value="1310704856" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="480" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-8" value="1310704857" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="530" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-9" value="1310704858" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="580" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-11" value="1310704859" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="630" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="P5py2p3auUi1wWhIR2dC-14" value="1310704850&lt;br&gt;1310704859" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-3" value="1310704851" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="230" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-4" value="1310704852" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="280" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-5" value="1310704853" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="330" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-6" value="1310704858" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="580" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-7" value="1310704857" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="630" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-8" value="1310704851&lt;br&gt;1310704853" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-10" value="1310704856&lt;br&gt;1310704857" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="180" y="480" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-15" value="1310704851&lt;br&gt;1310704853" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="290" y="230" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-16" value="1310704854&lt;br&gt;1310704857" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="290" y="380" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-17" value="1310704856&lt;br&gt;1310704857" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="290" y="580" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-18" value="for each input source range, x" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="55" y="750" width="165" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-20" value="for the minimum matching range" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="160" y="900" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-31" value="FALSE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-22" target="POvnpQk6guGHFEmsvNod-36">
+          <mxGeometry x="0.3239" relative="1" as="geometry">
+            <mxPoint x="330" y="1080" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-33" value="TRUE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-22" target="POvnpQk6guGHFEmsvNod-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-22" value="is x.min = y.min?" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="180" y="950" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-32" value="pass" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1010" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-36" value="Add new supplemental range: [x.min, y.min - 1]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1050" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-38" value="TRUE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-37" target="POvnpQk6guGHFEmsvNod-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-40" value="FALSE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-37" target="POvnpQk6guGHFEmsvNod-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-37" value="are there any matching ranges?" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="65" y="800" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-39" value="Add new supplemental range: [x.min, x.max]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="850" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-43" value="TRUE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-41" target="POvnpQk6guGHFEmsvNod-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-45" value="FALSE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-41" target="POvnpQk6guGHFEmsvNod-47">
+          <mxGeometry x="0.3425" relative="1" as="geometry">
+            <mxPoint x="320" y="1270" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-41" value="is x.max = y.max?" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="180" y="1140" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-42" value="pass" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-46" value="for the maximum matching range" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1090" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-47" value="Add new supplemental range: [y.max - 1, x.max]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1260" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-48" value="if multiple matching ranges, for each range except the last" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1340" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-56" value="FALSE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-50" target="POvnpQk6guGHFEmsvNod-55">
+          <mxGeometry x="0.4029" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-58" value="TRUE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="POvnpQk6guGHFEmsvNod-50" target="POvnpQk6guGHFEmsvNod-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-50" value="is y.max = y+1.min?" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="180" y="1390" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-55" value="Add new supplemental range: [y.max + 1, y+1.min - 1]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1500" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="POvnpQk6guGHFEmsvNod-57" value="pass" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1450" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

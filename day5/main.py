@@ -64,40 +64,40 @@ almanac = almanac.with_columns(
     (pl.col("source_lower") + pl.col("length") - 1).alias("source_upper"))
 
 # initiate output object
-# out = pl.DataFrame(seeds)
+out = pl.DataFrame(seeds)
 
 # traverse almanac for each seed
-# for num, mapping in enumerate(map_enum.categories):
-#     source, dest = mapping.split('-to-')
-#     existing_fields = out.columns
-#     out = out.lazy()
-#     out = (
-#         out
-#         .join(
-#             almanac.filter(pl.col("mapping") == pl.Series(
-#             [mapping], dtype=map_enum)),
-#             how="cross"
-#         )
-#         .with_columns(
-#             ((pl.col(source) >= pl.col("source_lower")) &
-#             (pl.col(source) <= pl.col("source_upper")))
-#             .alias("is_captured")
-#         )
-#         .with_columns(
-#             pl.when(pl.col("is_captured")).then(pl.col("dest_lower") + pl.col(source) - pl.col("source_lower")).alias(dest)
-#         )
-#         .group_by(existing_fields + ["mapping"])
-#         .agg(pl.col(dest).max().alias(dest))
-#         .with_columns(pl.when(pl.col(dest).is_null()).then(pl.col(source)).otherwise(pl.col(dest)).alias(dest))
-#         .select(existing_fields + [dest])
-#     ).collect()
+for num, mapping in enumerate(map_enum.categories):
+    source, dest = mapping.split('-to-')
+    existing_fields = out.columns
+    out = out.lazy()
+    out = (
+        out
+        .join(
+            almanac.filter(pl.col("mapping") == pl.Series(
+            [mapping], dtype=map_enum)),
+            how="cross"
+        )
+        .with_columns(
+            ((pl.col(source) >= pl.col("source_lower")) &
+            (pl.col(source) <= pl.col("source_upper")))
+            .alias("is_captured")
+        )
+        .with_columns(
+            pl.when(pl.col("is_captured")).then(pl.col("dest_lower") + pl.col(source) - pl.col("source_lower")).alias(dest)
+        )
+        .group_by(existing_fields + ["mapping"])
+        .agg(pl.col(dest).max().alias(dest))
+        .with_columns(pl.when(pl.col(dest).is_null()).then(pl.col(source)).otherwise(pl.col(dest)).alias(dest))
+        .select(existing_fields + [dest])
+    ).collect()
 
 # find min location
-# min_location = out.group_by(True).agg(
-#     pl.min("location")
-# )
+min_location = out.group_by(True).agg(
+    pl.min("location")
+)
 
-# print(min_location)
+print(min_location)
 
 # Part 2
 ranges_source = (
@@ -172,7 +172,6 @@ def find_ranges(ranges_source: pl.DataFrame, ranges_destination: pl.DataFrame) -
             #     (pl.col('captured_dest_end') - pl.col('captured_dest_start')) !=
             #      (pl.col('captured_source_end') - pl.col('captured_source_start'))
             # ) # this should always return 0 records
-
     )
 
     out = (
@@ -220,8 +219,8 @@ def find_ranges(ranges_source: pl.DataFrame, ranges_destination: pl.DataFrame) -
             if ranges_matching_grp.height > 1:
                 for i in range(0, ranges_matching_grp.height - 1):
                     is_gap_between_neighbors = (
-                        ranges_matching_grp.slice(i, 1).select(pl.col("captured_source_end") + 1).to_series() !=
-                        ranges_matching_grp.slice(i + 1, 1).select("captured_source_start").to_series()
+                        ranges_matching_grp.sort('captured_source_start').slice(i, 1).select(pl.col("captured_source_end") + 1).to_series() !=
+                        ranges_matching_grp.sort('captured_source_start').slice(i + 1, 1).select("captured_source_start").to_series()
                     )[0]
                     if is_gap_between_neighbors:
                         out = out.vstack(
@@ -246,54 +245,3 @@ for mapping in map_enum.categories:
     ranges_source = find_ranges(ranges_source, ranges_destination)
 
 print(ranges_source.select('lower').min())
-
-# test_input = (
-#     almanac2
-#         .filter(pl.col("mapping") == "seed-to-soil")
-#         .select(pl.exclude("mapping"))
-# )
-
-# print(find_ranges(ranges_source, test_input))
-
-
-# brute-force method
-# global_min = None
-# for i in range(0, seeds.len(), 2):
-#     print(seeds[i])
-#     for i in range(seeds[i], seeds[i] + seeds[i + 1], 1):
-#         print(i)
-#         # initiate output object
-#         out = pl.DataFrame(pl.Series("seed", [i]).cast(pl.UInt64))
-#         # traverse almanac for each seed
-#         for num, mapping in enumerate(list(map_coord.keys())):
-#             source, dest = mapping.split('-to-')
-#             existing_fields = out.columns
-#             out = out.lazy()
-#             out = (
-#                 out
-#                 .join(
-#                     almanac.filter(pl.col("mapping") == pl.Series(
-#                     [mapping], dtype=map_enum)),
-#                     how="cross"
-#                 )
-#                 .with_columns(
-#                     ((pl.col(source) >= pl.col("source_lower")) &
-#                     (pl.col(source) <= pl.col("source_upper")))
-#                     .alias("is_captured")
-#                 )
-#                 .with_columns(
-#                     pl.when(pl.col("is_captured")).then(pl.col("dest_lower") + pl.col(source) - pl.col("source_lower")).alias(dest)
-#                 )
-#                 .group_by(existing_fields + ["mapping"])
-#                 .agg(pl.col(dest).max().alias(dest))
-#                 .with_columns(pl.when(pl.col(dest).is_null()).then(pl.col(source)).otherwise(pl.col(dest)).alias(dest))
-#                 .select(existing_fields + [dest])
-#             ).collect()
-#         print(out)
-#         location_result = out.select('location').to_series()[0]
-#         if global_min is None:
-#             global_min = location_result
-#         elif location_result < global_min:
-#             global_min = location_result
-        
-# print(global_min)
