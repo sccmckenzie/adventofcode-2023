@@ -6,8 +6,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public class RaceRecord {
     @Getter
-    private int time;
+    private long time;
 
     @Getter
-    private int distance;
+    private long distance;
 }

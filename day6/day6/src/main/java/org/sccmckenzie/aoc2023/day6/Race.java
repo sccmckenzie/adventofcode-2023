@@ -6,21 +6,21 @@ import java.util.List;
 import static java.lang.Math.max;
 
 public class Race {
-    private int raceTime; // milliseconds
+    private long raceTime; // milliseconds
 
-    public Race(int raceTime) {
+    public Race(long raceTime) {
         this.raceTime = raceTime;
     }
 
-    public int getDistanceTraveled(int chargeTime) {
-        int distanceTraveled = (raceTime - chargeTime) * chargeTime;
+    public long getDistanceTraveled(long chargeTime) {
+        long distanceTraveled = (raceTime - chargeTime) * chargeTime;
         return max(distanceTraveled, 0);
     }
 
-    public List<Integer> getPossibleDistances() {
-        List<Integer> out = new ArrayList<Integer>();
-        int chargeTime = 1;
-        int distanceTraveled = 0;
+    public List<Long> getPossibleDistances() {
+        List<Long> out = new ArrayList<Long>();
+        long chargeTime = 1;
+        long distanceTraveled = 0;
 
         while (true) {
             distanceTraveled = getDistanceTraveled(chargeTime);
