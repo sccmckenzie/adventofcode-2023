@@ -6,8 +6,8 @@ public class HandTypeComparator implements Comparator<Hand> {
 
     @Override
     public int compare(Hand hand1, Hand hand2) {
-        HandType type1 = CardsUtils.getHandType(hand1);
-        HandType type2 = CardsUtils.getHandType(hand2);
+        HandType type1 = hand1.getHandType();
+        HandType type2 = hand2.getHandType();
 
         int out = type1.compareTo(type2);
 

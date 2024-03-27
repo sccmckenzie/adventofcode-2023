@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum Card {
+    JOKER("J"),
     TWO("2"),
     THREE("3"),
     FOUR("4"),
@@ -14,7 +15,6 @@ public enum Card {
     EIGHT("8"),
     NINE("9"),
     TEN("T"),
-    JACK("J"),
     QUEEN("Q"),
     KING("K"),
     ACE("A");

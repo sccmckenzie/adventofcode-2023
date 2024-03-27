@@ -36,7 +36,45 @@ public class CardsUtils {
         return out;
     }
 
-    public static HandType getHandType(Hand hand) {
+    public static HandType max(HandType handType1, HandType handType2) {
+        if (handType1.compareTo(handType2) >= 0) {
+            return handType1;
+        } else {
+            return handType2;
+        }
+    }
+
+    public static HandType calculateHandType(Hand hand) {
+        boolean anyJoker = hand.getCards().stream()
+                .anyMatch(n -> n.equals(Card.JOKER));
+
+        if (!anyJoker) return calculateHandTypeInternal(hand);
+
+        HandType maxHandType = HandType.HIGHCARD;
+        List<Card> originalCards = hand.getCards();
+        List<Card> cardsNoJoker = Arrays.stream(Card.values())
+                .filter(n -> !n.equals(Card.JOKER))
+                .toList();
+
+        for (int i = 0; i < originalCards.size(); i++) {
+            Card originalCard = originalCards.get(i);
+
+            if (originalCard.equals(Card.JOKER)) {
+                for (Card candidateCard : cardsNoJoker) {
+                    List<Card> newCards = new ArrayList<>(originalCards);
+                    newCards.set(i, candidateCard);
+                    Hand newHand = new Hand(newCards, hand.getBid());
+                    HandType newHandType = newHand.getHandType();
+
+                    maxHandType = max(newHandType, maxHandType);
+                }
+            }
+        }
+
+        return maxHandType;
+    }
+
+    public static HandType calculateHandTypeInternal(Hand hand) {
         Map<Card, Integer> handAgg = getHandAgg(hand);
 
         int maxValue = handAgg.values().stream()
